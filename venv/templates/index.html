@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          type="text/css"
+          href={{url_for("static", filename="style.css")}} />
+    <link rel="icon"
+          type="image/png"
+          href={{url_for("static", filename="favicon.png")}}/>
+    <title>Morning Update</title>
+</head>
+<body>
+
+    <header>
+        <div class="page_title">Morning Update</div>
+    </header>
+
+    <article id="page_description">
+        <p>
+            This morning update will send an email to you once every data at 9am IST with a weather report and a few of
+            the news highlights and more.
+        </p>
+    </article>
+
+    <article class="card">
+      <div class="container">
+        <div class="card_title">Join the list</div>
+
+        <form action="subscribe" method="post">
+            <div class="text_field_group">
+              <input type="email"
+                     name="subscribe_email"
+                     id="subscribe_email"
+                     class="text_field"
+                     placeholder="Your Email"/>
+              <label for="subscribe_email" class="text_field_label">Email Address</label>
+            </div>
+
+            <br/>
+            <button type="submit">SUBSCRIBE</button>
+        </form>
+      </div>
+    </article>
+
+    <article class="card">
+      <img id="card_img" src={{url_for("static", filename="any_qustions.png")}} alt="Any Questions?" style="width:100%">
+
+      <div class="container">
+        <div class="card_title">Contact Us</div>
+
+        <form action="contact" method="post">
+            <div class="text_field_group">
+              <input type="email" name="email" class="text_field" placeholder="Your Email"/>
+              <label for="email" class="text_field_label">Email Address</label>
+            </div>
+
+            <br />
+            <div class="text_field_group">
+              <input type="text" name="subject" class="text_field" placeholder="Subject"/>
+              <label for="subject" class="text_field_label">Subject</label>
+            </div>
+
+            <br />
+            <div class="text_field_group">
+              <textarea type="text" name="message" class="text_field" rows="5"></textarea>
+              <label for="message" class="text_field_label">Your message...</label>
+            </div>
+
+            <br/>
+            <button type="submit">SUBMIT</button>
+        </form>
+      </div>
+    </article>
+
+</body>
+</html>

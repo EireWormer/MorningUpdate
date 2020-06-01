@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background-color: rgba(0,128,0,0.7);
+  min-height: 70px;
+  padding-top: 10px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
+}
+
+.page_title {
+  font-weight: 400;
+  font-size: 2.7em;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #ffffff;
+}
+
+#page_description {
+  margin: 35px auto;
+  max-width: 93%;
+  font-weight: 300px;
+  font-size: 1em;
+  letter-spacing: 0.5px;
+}
+@media only screen and (min-width: 600px) {
+  #page_description {
+    max-width: 600px;
+  }
+}
+
+.card {
+  margin: 50px auto;
+  width: 93%;
+  max-width: 450px;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.3);
+  transition: 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 1px 6px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.card_title {
+  margin: 15px 0;
+  font-weight: 500;
+  font-size: 1.5em;
+  letter-spacing: 0.25px;
+}
+
+#card_img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* Style button like text */
+button {
+  font: inherit;
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  color: green;
+  font-weight: 500;
+  font-size: 14sp;
+  letter-spacing: 1.25px;
+  cursor: pointer;
+  margin: 12px 0;
+}
+
+/* Input text field */
+
+/* Grouping text field and label together */
+.text_field_group {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  position: relative;
+  padding: 15px 0 0;
+}
+
+/* Text field */
+.text_field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #d2d2d2;
+  outline: 0;
+  font-size: 16sp;
+  color: #212121;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.text_field::placeholder {
+  color: transparent;
+}
+
+.text_field:placeholder-shown ~ .text_field_label {
+  font-size: 16sp;
+  cursor: text;
+  top: 20px;
+}
+
+/* Merging label and text field */
+label,
+.text_field:focus ~ .text_field_label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.35s;
+  font-size: 12px;
+  color: #9b9b9b;
+}
+
+/* Text on focus above field */
+.text_field:focus ~ .text_field_label {
+  color: green;
+  letter-spacing: 0.1px;
+}
+
+/* Text field unerline bar on focus */
+.text_field:focus {
+  padding-bottom: 6sp;
+  border-bottom: 2px solid green;
+}
