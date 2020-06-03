@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
-from contact_us_email import send_contact_us_email
-from add_subscription import add_subscriber_to_db
+from .contact_us_email import send_contact_us_email
+from .add_subscription import add_subscriber_to_db
 app = Flask(__name__)
 
 

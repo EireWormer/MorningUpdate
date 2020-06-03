@@ -76,5 +76,3 @@ def start_daily_email_service():
     while True:
         schedule.run_pending()
         time.sleep(60)  # wait one minute
-
-start_daily_email_service()
