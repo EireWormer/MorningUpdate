@@ -5,6 +5,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from string import Template
 from pathlib import Path
+import schedule
+import time
 
 
 def get_subscriber_addresses(host, database, user, password):
@@ -65,3 +67,14 @@ def send_contact_us_email():
             # get from env.csv
             smtp.login(login_email, login_key)
             smtp.sendmail(login_email, address, msgRoot.as_string())
+
+
+def start_daily_email_service():
+    # Run send_contact_us_email() everyday at 09:00
+    schedule.every().day.at("9:00").do(send_contact_us_email)
+
+    while True:
+        schedule.run_pending()
+        time.sleep(60)  # wait one minute
+
+start_daily_email_service()
